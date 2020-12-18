@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Tomo from './Tomo';
+import People from './People';
+import AddPerson from './AddPerson';
 
 class App extends Component {
   state = {
@@ -9,12 +10,23 @@ class App extends Component {
       { name: 'Keiko', age: 35, hobby: 'movies', id: 3 }
     ]
   }
+
+  addPerson = (person) => {
+    person.id = Math.random();
+    // Copy the original array, and add new person to it
+    let people = [...this.state.people, person];
+    this.setState({
+      people: people
+    })
+  }
+
   render() {
     return(
       <div className="App">
         <h1>My first React App</h1>
         <p>Welcome!</p>
-        <Tomo people={ this.state.people } /> 
+        <People people={ this.state.people } /> 
+        <AddPerson addPerson={this.addPerson} />
       </div>
     );
   }

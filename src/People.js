@@ -1,6 +1,6 @@
 import React  from 'react';
 
-const Tomo = ({people}) => {
+const People = ({people}) => {
 
   // using if statement
   // const peopleList = people.map(person => {
@@ -34,4 +34,4 @@ const Tomo = ({people}) => {
   );
 }
 
-export default Tomo;
+export default People;
