@@ -20,13 +20,22 @@ class App extends Component {
     })
   }
 
+  deletePerson = (id) => {
+    let people = this.state.people.filter(person => {
+      return person.id !== id
+    });
+    this.setState({
+      people: people
+    })
+  }
+
   render() {
     return(
       <div className="App">
         <h1>My first React App</h1>
         <p>Welcome!</p>
-        <People people={ this.state.people } /> 
-        <AddPerson addPerson={this.addPerson} />
+        <People deletePerson={ this.deletePerson } people={ this.state.people } /> 
+        <AddPerson addPerson={ this.addPerson } />
       </div>
     );
   }

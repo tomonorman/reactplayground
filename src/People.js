@@ -1,6 +1,6 @@
 import React  from 'react';
 
-const People = ({people}) => {
+const People = ({people, deletePerson}) => {
 
   // using if statement
   // const peopleList = people.map(person => {
@@ -23,6 +23,7 @@ const People = ({people}) => {
         <div>Name: {person.name}</div>
         <div>Age: {person.age}</div>
         <div>Hobby: {person.hobby}</div>
+        <button onClick={() => {deletePerson(person.id)}}>Delete person</button>
       </div>
     ) : null;
   })
